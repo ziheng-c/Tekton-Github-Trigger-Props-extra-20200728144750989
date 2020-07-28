@@ -16,6 +16,8 @@ spec:
       description: Simple textarea property for Env5
     - name: envSecureProp2
       description: Simple secure property for Env6
+    - name: singleSelectName
+      description: Single select property for Env7
   steps:
     - name: show-props
       image: ubuntu
@@ -32,6 +34,8 @@ spec:
           value: $(params.envTextareaProp2)
         - name: envSecureProp2
           value: $(params.envSecureProp2)
+        - name: singleSelectName
+          value: $(params.singleSelectName)
       command: ["/bin/bash", "-c"]
       args:
         - echo "Tekton Properties Test Run";
@@ -42,4 +46,5 @@ spec:
           echo "env4 prop = $envTextProp2";
           echo "env5 prop = $envTextareaProp2";
           echo "env6 prop = $envSecureProp2";
+          echo "env7 prop = $singleSelectName";
           echo "=========================="
